@@ -1,4 +1,4 @@
-exports.getExpressInfo = function () {
+exports.getExpressInfo = () => {
   return {
     "name": "Express",
     "version": require('express/package.json').version,

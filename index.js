@@ -4,9 +4,9 @@ exports.register = function (app) {
       return next()
     }
 
-    var RuleRepository = require('./src/RuleRepository.js')
-    var routes = RuleRepository.getCollectionFromRouter(app._router.stack)
-    var rules = RuleRepository.transformRoutesToRules(routes)
+    const RuleRepository = require('./src/RuleRepository.js')
+    const routes = RuleRepository.getCollectionFromRouter(app._router.stack)
+    const rules = RuleRepository.transformRoutesToRules(routes)
 
     res.send({data: rules})
   })
@@ -16,8 +16,8 @@ exports.register = function (app) {
       return next()
     }
 
-    var FrameworkRepository = require('./src/FrameworkRepository.js')
-    var expressInfo = FrameworkRepository.getExpressInfo()
+    const FrameworkRepository = require('./src/FrameworkRepository.js')
+    const expressInfo = FrameworkRepository.getExpressInfo()
 
     res.send({data: expressInfo})
   })

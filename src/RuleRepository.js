@@ -1,9 +1,10 @@
-var RuleTransformer = require('./RuleTransformer.js')
+const RuleTransformer = require('./RuleTransformer.js')
 
-exports.getCollectionFromRouter = function(routes){
-  var filteredRoutes = []
-  routes.forEach(function (route){
-    if (route.name !== 'bound dispatch'){
+exports.getCollectionFromRouter = (routes) => {
+  const filteredRoutes = []
+  routes.forEach(function (route) {
+    // It seems all other Layers are not routes
+    if (route.name !== 'bound dispatch') {
       return
     }
     filteredRoutes.push(route.route)
@@ -11,8 +12,8 @@ exports.getCollectionFromRouter = function(routes){
   return filteredRoutes
 }
 
-exports.transformRoutesToRules = function(routes){
-  return routes.map(function (route){
+exports.transformRoutesToRules = (routes) => {
+  return routes.map(function (route) {
     return RuleTransformer.transform(route)
   })
 }

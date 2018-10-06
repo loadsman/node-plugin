@@ -4,9 +4,13 @@
   "description": "Loadsman node.js plugin",
   "main": "index.js",
   "scripts": {
-    "test": "karma"
+    "test": "jest"
   },
   "devDependencies": {
+    "express": "^4.0",
+    "jest": "^23.6.0"
+  },
+  "optionalDependencies": {
     "express": "^4.0"
   },
   "keywords": [

@@ -1,18 +1,21 @@
-exports.transform = function (route) {
-  var methods = Object.keys(route.methods)
+const transformMethods = methodsObject => {
+  const methods = Object.keys(methodsObject)
   // This means it's `all` route
   if (methods.length === 33) {
-    methods = []
+    return []
   }
-  // Node methods are lovercase.
-  methods = methods.map(function (method) {
+  // Node methods are lowercase. But we need them to be uppercase.
+  return methods.map(method => {
     return method.toUpperCase()
   })
+}
+exports.transformMethods = transformMethods
 
+exports.transform = (route) => {
   return {
     uri: route.path,
     name: '',
     router: 'Express',
-    methods: methods,
+    methods: transformMethods(route.methods),
   }
 }

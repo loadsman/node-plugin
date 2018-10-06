@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getExpressInfo 1`] = `
+Object {
+  "features": Array [
+    "rule-list",
+  ],
+  "name": "Express",
+  "version": "4.16.3",
+}
+`;
